@@ -14,7 +14,7 @@
                 <h1 class="text-3xl font-bold text-gray-800">Iniciar Sesión</h1>
                 <p class="mt-2 text-sm text-gray-600">
                     ¿No tienes una cuenta?
-                    <a class="text-blue-500 hover:underline font-medium" href="../examples/html/signup.html">
+                    <a class="text-blue-500 hover:underline font-medium" href="{{ route('register') }}">
                         Regístrate aquí
                     </a>
                 </p>
@@ -43,7 +43,7 @@
                         <div>
                             <div class="flex justify-between items-center">
                                 <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
-                                <a class="text-sm text-blue-500 hover:underline" href="../examples/html/recover-account.html">¿Olvidaste tu contraseña?</a>
+                                <a class="text-sm text-blue-500 hover:underline" href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a>
                             </div>
                             <input type="password" id="password" name="password" class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm h-10" required>
                         </div>
