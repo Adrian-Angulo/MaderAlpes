@@ -33,7 +33,18 @@
 
                 <div class="py-4 flex items-center text-xs text-gray-400 uppercase before:flex-1 before:border-t before:border-gray-300 before:mr-4 after:flex-1 after:border-t after:border-gray-300 after:ml-4">O</div>
 
+                @if ($errors->any())
+                    <div class="mb-4 text-sm text-red-600">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <form method="POST" action="{{ route('login') }}">
+                    @csrf
                     <div class="space-y-4">
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>

@@ -30,34 +30,34 @@
                         <!-- First Name and Last Name -->
                         <div class="flex space-x-4">
                             <div class="w-1/2">
-                                <label for="first_name" class="block text-sm font-medium text-gray-700">Nombre</label>
-                                <input type="text" id="first_name" name="first_name"
+                                <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+                                <input type="text" id="nombre" name="nombre"
                                     class="mt-1 block w-full border-gray-500  border-b-2 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm h-12"
-                                    :value="old('first_name')" required autofocus autocomplete="given-name">
-                                <x-input-error :messages="$errors->get('first_name')" class="mt-2" />
+                                    :value="old('nombre')" required autofocus autocomplete="given-name">
+                                <x-input-error :messages="$errors->get('nombre')" class="mt-2" />
                             </div>
                             <div class="w-1/2">
-                                <label for="last_name" class="block text-sm font-medium text-gray-700">Apellido</label>
-                                <input type="text" id="last_name" name="last_name"
+                                <label for="apellido" class="block text-sm font-medium text-gray-700">Apellido</label>
+                                <input type="text" id="apellido" name="apellido"
                                     class="mt-1 block w-full border-gray-500 border-b-2 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm h-12"
-                                    :value="old('last_name')" required autocomplete="family-name">
-                                <x-input-error :messages="$errors->get('last_name')" class="mt-2" />
+                                    :value="old('apellido')" required autocomplete="family-name">
+                                <x-input-error :messages="$errors->get('apellido')" class="mt-2" />
                             </div>
                         </div>
 
                         <!-- Phone, Document Type, and Document Number -->
                         <div class="flex space-x-4">
                             <div class="w-1/3">
-                                <label for="phone" class="block text-sm font-medium text-gray-700">Teléfono</label>
-                                <input type="tel" id="phone" name="phone"
+                                <label for="telefono" class="block text-sm font-medium text-gray-700">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono"
                                     class="mt-1 block w-full border-gray-500 border-b-2 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm h-12"
-                                    :value="old('phone')" required autocomplete="tel">
-                                <x-input-error :messages="$errors->get('phone')" class="mt-2" />
+                                    :value="old('telefono')" required autocomplete="tel">
+                                <x-input-error :messages="$errors->get('telefono')" class="mt-2" />
                             </div>
                             <div class="w-1/3">
-                                <label for="document_type" class="block text-sm font-medium text-gray-700">Tipo de
+                                <label for="tipo_documento" class="block text-sm font-medium text-gray-700">Tipo de
                                     documento</label>
-                                <select id="document_type" name="document_type"
+                                <select id="tipo_documento" name="tipo_documento"
                                     class="mt-1 block w-full border-gray-500 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm h-12"
                                     required>
                                     <option value="cc">Cédula de ciudadanía</option>
@@ -65,15 +65,15 @@
                                     <option value="nit">NIT</option>
                                     <option value="passport">Pasaporte</option>
                                 </select>
-                                <x-input-error :messages="$errors->get('document_type')" class="mt-2 border-b-2" />
+                                <x-input-error :messages="$errors->get('tipo_documento')" class="mt-2 border-b-2" />
                             </div>
                             <div class="w-1/3">
-                                <label for="document_number" class="block text-sm font-medium text-gray-700">Número de
+                                <label for="numero_documento" class="block text-sm font-medium text-gray-700">Número de
                                     documento</label>
-                                <input type="text" id="document_number" name="document_number"
+                                <input type="text" id="numero_documento" name="numero_documento"
                                     class="mt-1 block w-full border-gray-500 rounded-lg border-b-2 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm h-12"
-                                    :value="old('document_number')" required>
-                                <x-input-error :messages="$errors->get('document_number')" class="mt-2" />
+                                    :value="old('numero_documento')" required>
+                                <x-input-error :messages="$errors->get('numero_documento')" class="mt-2" />
                             </div>
                         </div>
 

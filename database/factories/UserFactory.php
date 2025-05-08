@@ -33,7 +33,7 @@ class UserFactory extends Factory
             'telefono' => fake()->phoneNumber(),
             'tipo_documento' => fake()->randomElement(['CC','CE','NIT','PASAPORTE']),
             'numero_documento' => fake()->unique()->numerify('##########'),
-            'recibir_notificaciones' => fake()->boolean(),
+            
 
         ];
     }

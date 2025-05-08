@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
-use Inertia\Inertia;
+use Inertia\Inertia; 
 use Inertia\Response;
 
 class RegisteredUserController extends Controller
@@ -37,7 +37,12 @@ class RegisteredUserController extends Controller
         ]);
 
         $user = User::create([
-            'name' => $request->name,
+            'nombre' => $request->nombre,
+            'apellido'=>$request->apellido,
+            'telefono'=>$request->telefono,
+            'tipo_documento'=>$request->tipo_documento,
+            'numero_documento'=>$request->numero_documento,
+            'recibir_notificaciones'=>True,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
@@ -46,6 +51,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        return redirect(route('/', absolute: false));
     }
 }

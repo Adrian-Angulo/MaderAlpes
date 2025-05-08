@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('telefono')->unique();
             $table->enum('tipo_documento', ['CC', 'CE', 'NIT', 'PASAPORTE']);
             $table->string('numero_documento')->unique();
-            $table->boolean('recibir_notificaciones');
+            $table->boolean('recibir_notificaciones')->default(false)->change();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

@@ -24,11 +24,26 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
-
-        $request->session()->regenerate();
-
-        return redirect()->intended(route('dashboard', absolute: false));
+        try {
+            // Autenticar al usuario
+            $request->authenticate();
+    
+            // Regenerar la sesión por seguridad
+            $request->session()->regenerate();
+    
+            // Redirigir al usuario a la página deseada
+            return redirect()->intended('/');
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            // Manejar credenciales incorrectas
+            return back()->withErrors([
+                'email' => 'Las credenciales proporcionadas no son correctas.',
+            ])->withInput($request->only('email'));
+        } catch (\Exception $e) {
+            // Manejar cualquier otra excepción
+            return back()->withErrors([
+                'general' => 'Ocurrió un error inesperado. Por favor, inténtalo de nuevo más tarde.',
+            ]);
+        }
     }
 
     /**

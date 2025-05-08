@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
@@ -26,6 +27,7 @@ class User extends Authenticatable
         'tipo_documento',
         'numero_documento',
         'direccion',
+        'password',
     ];
 
     /**
@@ -49,5 +51,14 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'model_has_roles');
+    }
+
+    public function hasRole($role)
+    {
+        return $this->roles->contains('name', $role);
     }
 }
